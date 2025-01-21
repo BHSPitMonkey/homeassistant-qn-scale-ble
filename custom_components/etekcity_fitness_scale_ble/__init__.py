@@ -1,4 +1,4 @@
-"""The etekcity_fitness_scale_ble integration."""
+"""The qn_scale_ble integration."""
 
 from __future__ import annotations
 

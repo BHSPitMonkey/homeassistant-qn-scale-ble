@@ -1,6 +1,6 @@
-"""Constants for the etekcity_fitness_scale_ble integration."""
+"""Constants for the qn_scale_ble integration."""
 
-DOMAIN = "etekcity_fitness_scale_ble"
+DOMAIN = "qn_scale_ble"
 
 CONF_CALC_BODY_METRICS = "calculate body metrics"
 CONF_SEX = "sex"

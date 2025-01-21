@@ -1,11 +1,11 @@
-"""Support for Etekcity Fitness Scale BLE sensors."""
+"""Support for QN Scale BLE sensors."""
 
 from dataclasses import dataclass
 from datetime import date
 import logging
 from typing import Any, Self
 
-from etekcity_esf551_ble import IMPEDANCE_KEY, WEIGHT_KEY, Sex, WeightUnit
+from qn_scale_ble import IMPEDANCE_KEY, WEIGHT_KEY, Sex, WeightUnit
 from sensor_state_data import Units
 
 from homeassistant import config_entries
@@ -170,7 +170,7 @@ async def async_setup_entry(
 
 
 class ScaleSensor(RestoreSensor):
-    """Base sensor implementation for Etekcity scale measurements."""
+    """Base sensor implementation for QN scale measurements."""
 
     _attr_should_poll = False
     _attr_has_entity_name = True
@@ -207,7 +207,7 @@ class ScaleSensor(RestoreSensor):
         self._attr_device_info = DeviceInfo(
             connections={(CONNECTION_BLUETOOTH, address)},
             name=name,
-            manufacturer="Etekcity",
+            manufacturer="Qing Niu Technology",
         )
         self._coordinator = coordinator
 
@@ -295,7 +295,7 @@ class ScaleWeightSensorExtraStoredData(SensorExtraStoredData):
 
 
 class ScaleWeightSensor(ScaleSensor):
-    """Representation of a weight sensor for the Etekcity scale."""
+    """Representation of a weight sensor for the QN scale."""
 
     def __init__(
         self,

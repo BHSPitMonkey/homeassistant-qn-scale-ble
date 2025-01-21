@@ -1,4 +1,4 @@
-"""Coordinator for the etekcity_fitness_scale_ble integration."""
+"""Coordinator for the qn_scale_ble integration."""
 
 from __future__ import annotations
 
@@ -7,9 +7,9 @@ from collections.abc import Callable
 from datetime import date
 import logging
 
-from etekcity_esf551_ble import (
-    EtekcitySmartFitnessScale,
-    EtekcitySmartFitnessScaleWithBodyMetrics,
+from qn_scale_ble import (
+    QNScale,
+    QnScaleWithBodyMetrics,
     ScaleData,
     Sex,
     WeightUnit,
@@ -23,11 +23,11 @@ _LOGGER = logging.getLogger(__name__)
 class ScaleDataUpdateCoordinator:
     """Coordinator to manage data updates for a scale device.
 
-    This class handles the communication with the Etekcity Smart Fitness Scale
+    This class handles the communication with the QN Scale
     and coordinates updates to the Home Assistant entities.
     """
 
-    _client: EtekcitySmartFitnessScale = None
+    _client: QnScale = None
     _display_unit: WeightUnit = None
 
     body_metrics_enabled: bool = False
@@ -57,9 +57,9 @@ class ScaleDataUpdateCoordinator:
 
         if self.body_metrics_enabled:
             _LOGGER.debug(
-                "Initializing new EtekcitySmartFitnessScaleWithBodyMetrics client"
+                "Initializing new QnScaleWithBodyMetrics client"
             )
-            self._client = EtekcitySmartFitnessScaleWithBodyMetrics(
+            self._client = QnScale(
                 self.address,
                 self.update_listeners,
                 self._sex,
@@ -68,8 +68,8 @@ class ScaleDataUpdateCoordinator:
                 self._display_unit,
             )
         else:
-            _LOGGER.debug("Initializing new EtekcitySmartFitnessScale client")
-            self._client = EtekcitySmartFitnessScale(
+            _LOGGER.debug("Initializing new QnScale client")
+            self._client = QnScale(
                 self.address, self.update_listeners, self._display_unit
             )
         await self._client.async_start()
@@ -78,7 +78,7 @@ class ScaleDataUpdateCoordinator:
     async def async_start(self) -> None:
         """Start the coordinator and initialize the scale client.
 
-        This method sets up the EtekcitySmartFitnessScale client and starts
+        This method sets up the QnScale client and starts
         listening for updates from the scale.
 
         """

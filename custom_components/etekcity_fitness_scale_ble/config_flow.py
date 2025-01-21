@@ -1,4 +1,4 @@
-"""Config flow for etekcity_fitness_scale_ble integration."""
+"""Config flow for qn_scale_ble integration."""
 
 from __future__ import annotations
 

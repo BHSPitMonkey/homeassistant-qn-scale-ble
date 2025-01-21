@@ -1,24 +1,23 @@
 {
-  "domain": "etekcity_fitness_scale_ble",
-  "name": "Etekcity Fitness Scale BLE",
+  "domain": "qn_scale_ble",
+  "name": "QN Scale BLE",
   "bluetooth": [
     {
       "connectable": true,
-      "manufacturer_id": 1744,
-      "local_name": "Etekcity *Fitness *Scale*"
+      "local_name": "QN-Scale"
     }
   ],
   "codeowners": [
-    "@ronnnnnnnnnnnnn"
+    "@BHSPitMonkey"
   ],
   "config_flow": true,
   "dependencies": [
     "bluetooth_adapters"
   ],
-  "documentation": "https://github.com/ronnnnnnnnnnnnn/etekcity_fitness_scale_ble",
+  "documentation": "https://github.com/BHSPitMonkey/qn_scale_ble",
   "integration_type": "device",
   "iot_class": "local_push",
-  "issue_tracker": "https://github.com/ronnnnnnnnnnnnn/etekcity_fitness_scale_ble/issues",
-  "requirements": ["etekcity_esf551_ble==0.2.1"],
-  "version": "0.2.4"
+  "issue_tracker": "https://github.com/BHSPitMonkey/qn_scale_ble/issues",
+  "requirements": ["qn_scale_ble==0.0.1"],
+  "version": "0.0.1"
 }
