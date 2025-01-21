@@ -8,7 +8,7 @@ from datetime import date
 import logging
 
 from qn_scale_ble import (
-    QNScale,
+    QnScale,
     QnScaleWithBodyMetrics,
     ScaleData,
     Sex,
